@@ -6,26 +6,25 @@ import {
   Typography,
   TextField,
   Button,
+  FormControlLabel,
   Card,
   CardContent,
   InputAdornment,
   IconButton,
   Alert,
   CircularProgress,
+  Divider,
+  Stack,
   Stepper,
   Step,
   StepLabel,
-  Stack,
-  FormControl,
-  FormLabel,
-  RadioGroup,
-  FormControlLabel,
   Radio,
-  Divider,
-  useTheme,
-  Checkbox
+  RadioGroup,
+  FormControl,
+  Checkbox,
+  useTheme
 } from '@mui/material';
-import { Visibility, VisibilityOff, Check, Google, LinkedIn } from '@mui/icons-material';
+import { Visibility, VisibilityOff, Google, LinkedIn, Check } from '@mui/icons-material';
 import { useAppContext } from '../context/AppContext';
 import { UserRole } from '../types';
 

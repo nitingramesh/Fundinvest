@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import { User, StartupUser, InvestorUser, UserRole, DashboardStats } from '../types';
+import { StartupUser, InvestorUser, UserRole, DashboardStats } from '../types';
 
 // Mock data for development - in production this would come from API
 import { mockStartups, mockInvestors } from '../utils/mockData';

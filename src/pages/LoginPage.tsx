@@ -21,12 +21,18 @@ import {
 import { Visibility, VisibilityOff, Google, LinkedIn } from '@mui/icons-material';
 import { useAppContext } from '../context/AppContext';
 
+interface LoginFormData {
+  email: string;
+  password: string;
+  rememberMe: boolean;
+}
+
 const LoginPage: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const { login } = useAppContext();
   
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<LoginFormData>({
     email: '',
     password: '',
     rememberMe: false
@@ -38,11 +44,14 @@ const LoginPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value, checked, type } = e.target;
+    const { name, value, checked } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: type === 'checkbox' ? checked : value
+      [name]: name === 'rememberMe' ? checked : value
     }));
+    
+    // Clear error when user types
+    if (error) setError(null);
   };
   
   const handleClickShowPassword = () => {
